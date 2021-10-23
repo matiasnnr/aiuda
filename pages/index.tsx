@@ -1,12 +1,34 @@
 import type { NextPage } from "next";
-import Card from "@components/Card";
+import Card from "@components/Cards/Card";
 import ArrowIcon from "@components/Icons/ArrowIcon";
 import Navbar from "@components/Navbar";
 import styles from "../styles/Home.module.css";
 import * as C from "@helpers/constants";
-import { useEffect } from "react";
+import DonationCard from "@components/Cards/DonationCard";
 
 const Home: NextPage = () => {
+  const HorizontalScroll = ({ scrollTo = "right" }) => {
+    let text = "right";
+    let scroll = () => (document.getElementById("evidence").scrollLeft += 500);
+
+    if (scrollTo === "left") {
+      scroll = () => (document.getElementById("evidence").scrollLeft -= 500);
+      text = "left";
+    }
+
+    return (
+      <button
+        className={`${
+          scrollTo === "left" ? styles.button_left : styles.button_right
+        }`}
+        onClick={scroll}
+        style={{ right: `${scrollTo === "left" ? -1 : 0}` }}
+      >
+        {text}
+      </button>
+    );
+  };
+
   return (
     <main>
       {/* Navbar */}
@@ -14,7 +36,7 @@ const Home: NextPage = () => {
       <Navbar />
 
       {/* Header */}
-      <section className={styles.header}>
+      <section className={styles.header__container}>
         <div className={styles.header__text}>
           <h1 className={styles.title}>Ofrece tu ayuda.</h1>
           <p className={styles.description}>
@@ -40,18 +62,22 @@ const Home: NextPage = () => {
 
       {/* Evidence */}
 
-      <section className={styles.evidences}>
-        <div className={styles.child}>
-          <div className={styles.child__content}>a</div>
-        </div>
-        <div className={styles.child}>
-          <div className={styles.child__content}>b</div>
-        </div>
-        <div className={styles.child}>
-          <div className={styles.child__content}>c</div>
-        </div>
-        <div className={styles.child}>
-          <div className={styles.child__content}>d</div>
+      <section className={styles.evidences__container}>
+        <HorizontalScroll />
+        <HorizontalScroll scrollTo="left" />
+        <div id="evidence" className={styles.evidences}>
+          <div className={styles.child}>
+            <div className={styles.child__content}>a</div>
+          </div>
+          <div className={styles.child}>
+            <div className={styles.child__content}>b</div>
+          </div>
+          <div className={styles.child}>
+            <div className={styles.child__content}>c</div>
+          </div>
+          <div className={styles.child}>
+            <div className={styles.child__content}>d</div>
+          </div>
         </div>
       </section>
 
@@ -63,8 +89,14 @@ const Home: NextPage = () => {
 
       {/* Donations */}
 
-      <section style={{ backgroundColor: "salmon" }}>
-        <h1>Section Five</h1>
+      <section
+        id="donations"
+        className={styles.donations__container}
+        style={{ backgroundColor: "salmon" }}
+      >
+        <DonationCard />
+        <DonationCard />
+        <DonationCard />
       </section>
     </main>
   );

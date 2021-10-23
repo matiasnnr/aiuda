@@ -1,6 +1,6 @@
-/* Header Styles */
+/* Header Styles Start */
 
-.header {
+.header__container {
   width: 100%;
   max-width: var(--page-max-width-lg);
   display: flex;
@@ -110,7 +110,7 @@
 }
 
 @media (min-width: 770px) {
-  .header {
+  .header__container {
     margin: 2rem 0;
   }
 
@@ -123,13 +123,31 @@
   }
 }
 
-/* Pruebas */
+/* Header Styles End */
+
+/* Donations Styles Start */
+
+.donations__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Donations Styles End */
+
+/* Evidences Styles Start */
+
+.evidences__container {
+  position: relative;
+}
 
 .evidences {
+  position: relative;
   white-space: nowrap;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
-  padding-top: var(--nav-height-sm);
+  scroll-behavior: smooth;
 }
 
 .child {
@@ -150,3 +168,37 @@
   background-color: salmon;
   height: 100%;
 }
+
+/* Buttons */
+
+.button_left,
+.button_right {
+  position: absolute;
+  align-items: center;
+  align-content: center;
+  vertical-align: middle;
+  justify-content: center;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  color: black;
+  height: 150px;
+  width: 50px;
+  background-color: var(--dark-gray);
+  opacity: 0.5;
+}
+.button_left {
+  left: 0;
+}
+.button_right {
+  right: 0;
+}
+.button_right:hover {
+  opacity: 0.7;
+}
+.button_left:hover {
+  opacity: 0.7;
+}
+
+/* Evidences Styles End */
