@@ -14,6 +14,11 @@ function getWindowDimensions() {
       width,
       height,
     };
+  } else {
+    return {
+      width: 0,
+      height: 0,
+    };
   }
 }
 
@@ -27,17 +32,15 @@ function useWindowDimensions() {
       setWindowDimensions(getWindowDimensions());
     }
 
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return windowDimensions;
 }
 
 const Home: NextPage = () => {
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   const HorizontalScroll = ({ scrollTo = "right" }) => {
     let text = "right";
