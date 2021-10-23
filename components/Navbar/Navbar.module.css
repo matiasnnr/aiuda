@@ -1,0 +1,142 @@
+/* Navbar Container */
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--light-gray);
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+}
+
+.nav {
+  height: var(--nav-height-sm);
+  width: 100%;
+  max-width: var(--page-max-width-md);
+  padding: 0 var(--nav-padding);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--white);
+}
+
+/* Title or Logo */
+.nav > .nav__header {
+  display: flex;
+}
+
+.nav > .nav__header > .nav__title {
+  font-size: var(--fs-logo);
+}
+
+/* Links inside the Navbar */
+.nav > .nav__links {
+  position: absolute;
+  width: 100%;
+  background-color: var(--white);
+  height: 0px;
+  font-size: var(--fs-normal);
+  transition: all 0.3s ease-in;
+  overflow-y: hidden;
+  top: var(--nav-height-sm);
+  left: 0px;
+  padding: 0 var(--nav-padding);
+  z-index: 99999;
+}
+
+.nav > .nav__links > a {
+  display: flex;
+  padding: 1rem 0;
+  width: 100%;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.nav > .nav__links > a:last-child {
+  border: none;
+}
+
+/* Hide the Checkbox */
+.nav > #nav__check {
+  display: none;
+}
+
+.nav > #nav__check:not(:checked) ~ .nav__links {
+  height: 0px;
+}
+
+.nav > #nav__check:checked ~ .nav__links {
+  height: calc(100vh - var(--nav-height-sm));
+  /* overflow-y: auto; */
+  overflow-y: hidden; /* Hide vertical scrollbar */
+}
+
+/* Button */
+.nav > .nav__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+}
+.nav > .nav__btn > label > span {
+  display: block;
+  width: 25px;
+  height: 1px;
+  margin: 5px;
+  background-color: var(--dark-gray);
+  transition: 0.3s ease;
+}
+
+.nav > #nav__check:checked ~ .nav__btn > label > span:first-child {
+  transform: rotate(45deg) translate(0px, 5px);
+}
+
+.nav > #nav__check:checked ~ .nav__btn > label > span:last-child {
+  transform: rotate(-45deg) translate(-1px, -5px);
+}
+
+@media (min-width: 600px) {
+  .nav {
+    height: var(--nav-height-lg);
+    max-width: var(--page-max-width-md);
+    padding-right: 0;
+  }
+
+  .nav > .nav__btn {
+    display: none;
+  }
+  .nav > #nav__check {
+    display: none;
+  }
+
+  .nav > .nav__links {
+    position: initial;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .nav > .nav__links > a {
+    padding: 13px 10px;
+    width: auto;
+    border: none;
+  }
+
+  .nav > .nav__links > a:hover {
+    color: var(--secondary);
+  }
+
+  .nav > .nav__links > a:last-child {
+    margin-top: initial;
+    padding: 13px 0px 13px 10px;
+    width: auto;
+  }
+}
+
+@media (min-width: 1064px) {
+  .nav {
+    max-width: var(--page-max-width-lg);
+  }
+}

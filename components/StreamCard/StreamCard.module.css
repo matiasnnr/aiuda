@@ -1,0 +1,93 @@
+.container {
+  /* overflow: hidden; */
+  position: relative;
+  display: inline-block;
+  width: 315px;
+  height: auto;
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 450ms all;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+
+.stream__image {
+  height: 177px;
+  cursor: pointer;
+  background: -webkit-linear-gradient(0deg, var(--primary), var(--secondary));
+}
+
+.stream__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease-in;
+}
+
+.stream__image img:hover {
+  transform: translate(5px, -5px);
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--card-padding);
+}
+
+.user__image img {
+  height: 50px;
+  width: 50px;
+  border: 1px solid var(--black);
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user__info {
+  width: 100%;
+  height: 100%;
+  padding: 0 var(--card-padding);
+}
+
+.user__info > div:first-child {
+  font-size: var(--fs-subtitle);
+  color: var(--light-gray);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 200px;
+  height: 1.2em;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.user__info > div:nth-child(2) {
+  font-size: var(--fs-normal);
+  color: var(--gray);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 200px;
+  height: 1.2em;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.user__info > div:nth-child(3) {
+  font-size: var(--fs-normal);
+  color: var(--gray);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 200px;
+  height: 1.2em;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.more__options {
+  width: 50px;
+  height: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}

@@ -1,9 +1,71 @@
+:root {
+  /* Pages */
+  --page-max-width-md: 780px;
+  --page-max-width-lg: 1100px;
+
+  /* Colors */
+  --white: #ffffff;
+  --black: #000000;
+  --primary: #e05757;
+  --secondary: #fcb6b6;
+  --dark-gray: #202023;
+  --gray: #666666;
+  --shadow-gray: #aaaaaa;
+  --light-gray: #e5e5e5;
+
+  /* RRSS Colors */
+  --twitter: #1d9bf0;
+  --facebook: #1877f2;
+  --tiktok: #000000;
+
+  /* Navbar */
+  --nav-height-sm: 64px;
+  --nav-height-lg: 80px;
+  --nav-padding: 24px;
+
+  /* Forms */
+  --form-width: 300px;
+
+  /* Inputs & Buttons */
+  --ib-height: 48px;
+  --ib-border-radius: 5px;
+  --ib-horizontal-padding: 0 12px;
+
+  /* Margins & Paddings */
+  --card-padding: 0.5rem;
+
+  /* Font Sizes */
+  --fs-logo: 2rem;
+  --fs-big-title-lg: 8rem;
+  --fs-big-title-md: 6rem;
+  --fs-big-title-sm: 3.7rem;
+  --fs-title: 3rem;
+  --fs-subtitle: 1.5rem;
+  --fs-normal: 1rem;
+  --fs-details: 0.875rem;
+
+  /* Text */
+  --description-color: var(--gray);
+
+  /* Shadows */
+  --primary-box-shadow: var(--primary) 0px 4px 14px 0px;
+  --black-box-shadow: var(--shadow-gray) 0px 4px 14px 0px;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  height: 100vh;
+  width: 100vw;
+  padding-top: var(--nav-height-sm);
+  scroll-snap-align: start;
 }
 
 a {
@@ -13,4 +75,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
 }

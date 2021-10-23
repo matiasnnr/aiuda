@@ -1,0 +1,98 @@
+.nav {
+  height: var(--nav-height-sm);
+  width: 100%;
+  background-color: var(--white);
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--light-gray);
+  padding: 0 var(--padding-sm);
+}
+
+.nav > .nav__header {
+  display: inline;
+}
+
+.nav > .nav__header > .nav__title {
+  display: inline-block;
+  font-size: var(--fs-title);
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav__btn {
+  display: none;
+}
+
+.nav > .nav__links {
+  display: inline;
+  float: right;
+  font-size: var(--fs-title);
+}
+
+.nav > .nav__links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+}
+
+.nav > .nav__links > a:hover {
+  /* background-color: rgba(0, 0, 0, 0.3); */
+}
+
+.nav > #nav__check {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .nav > .nav__btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav__btn > label {
+    height: var(--nav-height-sm);
+    width: var(--nav-height-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: var(--margin-sm);
+  }
+  .nav > .nav__btn > label:hover,
+  .nav #nav__check:checked ~ .nav__btn > label {
+    /* background-color: rgba(0, 0, 0, 0.3); */
+  }
+  .nav > .nav__btn > label > span {
+    display: flex;
+    align-items: center;
+    width: 25px;
+    height: 1px;
+    margin: 5px;
+    background-color: var(--dark-gray);
+  }
+  .nav > .nav__links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: var(--white);
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: var(--nav-height-sm);
+    left: 0px;
+    padding: 0 var(--padding-sm);
+  }
+  .nav > .nav__links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav__check:not(:checked) ~ .nav__links {
+    height: 0px;
+  }
+  .nav > #nav__check:checked ~ .nav__links {
+    height: calc(100vh - var(--nav-height-sm));
+    /* overflow-y: auto; */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+  }
+}

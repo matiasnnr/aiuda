@@ -1,0 +1,21 @@
+.form {
+  padding-top: 1rem;
+  width: var(--form-width);
+}
+
+.input {
+  border-radius: var(--ib-border-radius);
+  height: var(--ib-height);
+  width: 100%;
+  margin-top: 10px;
+  padding: var(--ib-horizontal-padding);
+  font-size: var(--fs-normal);
+  border: 1px solid var(--light-gray);
+  outline: none;
+  transition: 0.15s ease;
+}
+
+.input:focus {
+  border: 1px solid var(--dark-gray);
+  color: var(--dark-gray);
+}
