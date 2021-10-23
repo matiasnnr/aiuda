@@ -101,8 +101,12 @@ const Home: NextPage = () => {
       {/* Evidence */}
 
       <section className={styles.evidences__container}>
-        <HorizontalScroll />
-        <HorizontalScroll scrollTo="left" />
+        {width > 1000 && (
+          <>
+            <HorizontalScroll />
+            <HorizontalScroll scrollTo="left" />
+          </>
+        )}
         <div id="evidence" className={styles.evidences}>
           <div className={styles.child}>
             <div className={styles.child__content}>a</div>
