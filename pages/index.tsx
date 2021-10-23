@@ -9,9 +9,11 @@ import DonationCard from "@components/Cards/DonationCard";
 const Home: NextPage = () => {
   const HorizontalScroll = ({ scrollTo = "right" }) => {
     let text = "right";
+    // @ts-ignore: Object is possibly 'null'.
     let scroll = () => (document.getElementById("evidence").scrollLeft += 500);
 
     if (scrollTo === "left") {
+      // @ts-ignore: Object is possibly 'null'.
       scroll = () => (document.getElementById("evidence").scrollLeft -= 500);
       text = "left";
     }
