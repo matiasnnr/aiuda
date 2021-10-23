@@ -126,7 +126,7 @@ const Home: NextPage = () => {
       {/* Background */}
 
       <section style={{ backgroundColor: "purple" }}>
-        <h1>Section Four</h1>
+        <h1 style={{ marginTop: 0 }}>Section Four</h1>
       </section>
 
       {/* Donations */}
