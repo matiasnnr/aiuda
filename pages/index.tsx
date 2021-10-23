@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useState, useEffect } from "react";
 import Card from "@components/Cards/Card";
 import ArrowIcon from "@components/Icons/ArrowIcon";
 import Navbar from "@components/Navbar";
@@ -6,15 +7,43 @@ import styles from "../styles/Home.module.css";
 import * as C from "@helpers/constants";
 import DonationCard from "@components/Cards/DonationCard";
 
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height,
+  };
+}
+
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowDimensions;
+}
+
 const Home: NextPage = () => {
+  const { height, width } = useWindowDimensions();
+
   const HorizontalScroll = ({ scrollTo = "right" }) => {
     let text = "right";
-    // @ts-ignore: Object is possibly 'null'.
-    let scroll = () => (document.getElementById("evidence").scrollLeft += 500);
+    let scroll = () =>
+      // @ts-ignore: Object is possibly 'null'.
+      (document.getElementById("evidence").scrollLeft += width);
 
     if (scrollTo === "left") {
       // @ts-ignore: Object is possibly 'null'.
-      scroll = () => (document.getElementById("evidence").scrollLeft -= 500);
+      scroll = () => (document.getElementById("evidence").scrollLeft -= width);
       text = "left";
     }
 
