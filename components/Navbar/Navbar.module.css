@@ -5,8 +5,8 @@
   justify-content: center;
   border-bottom: 1px solid var(--light-gray);
   z-index: 99999;
-  position: fixed;
-  top: 0;
+  /* position: fixed; */
+  /* top: 0; */
 }
 
 .nav {
@@ -45,14 +45,14 @@
   z-index: 99999;
 }
 
-.nav > .nav__links > a {
+.nav > .nav__links > div {
   display: flex;
   padding: 1rem 0;
   width: 100%;
   border-bottom: 1px solid var(--light-gray);
 }
 
-.nav > .nav__links > a:last-child {
+.nav > .nav__links > div:last-child {
   border: none;
 }
 

@@ -1,7 +1,18 @@
 .container {
-  height: 220px;
+  height: 150px;
   width: 90%;
   background-color: var(--white);
-  border-radius: 5px;
+  border: 2px solid var(--border-gray);
+  border-radius: 6px;
   padding: 20px;
+  transition: 0.25s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.container:hover {
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+  transform: translateY(-5px);
 }
