@@ -5,6 +5,7 @@
   border: 2px solid var(--border-gray);
   border-radius: 6px;
   padding: 20px;
+  margin: 0.5rem;
   transition: 0.25s ease-in-out;
   display: flex;
   align-items: center;
