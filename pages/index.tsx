@@ -86,7 +86,7 @@ const Home: NextPage = () => {
         </div>
         <Card
           text={"Haz tu donación"}
-          description={"No hay mínimo y todo aporte es bienvenido."}
+          description={"Estarás apoyando a muchas personas."}
         />
         <div className={styles.header__more_options}>
           <Link href="#background">Historial de donaciones</Link>

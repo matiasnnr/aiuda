@@ -1,6 +1,7 @@
 .container {
   height: 150px;
   width: 90%;
+  max-width: var(--donation-button-max-width);
   background-color: var(--white);
   border: 2px solid var(--border-gray);
   border-radius: 6px;

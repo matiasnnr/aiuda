@@ -118,17 +118,17 @@
     overflow: visible;
   }
 
-  .nav > .nav__links > a {
+  .nav > .nav__links > div {
     padding: 13px 10px;
     width: auto;
     border: none;
   }
 
-  .nav > .nav__links > a:hover {
+  .nav > .nav__links > div:hover {
     color: var(--secondary);
   }
 
-  .nav > .nav__links > a:last-child {
+  .nav > .nav__links > div:last-child {
     margin-top: initial;
     padding: 13px 0px 13px 10px;
     width: auto;
